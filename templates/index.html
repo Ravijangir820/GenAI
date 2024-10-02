@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>File Path Input</title>
+</head>
+<body>
+  <h1>Enter File Path</h1>
+  <form action="/process_file" method="POST">
+    <label for="file-path">File Path:</label>
+    <input type="text" id="file-path" name="file-path" required>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

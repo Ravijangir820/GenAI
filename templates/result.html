@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    {% if result %}
+        <p><b>Mean Squared Error (MSE):</b> {{ result.mse }}</p>
+        <p><b>Accuracy:</b> {{ result.accuracy }}%</p>
+        <p><b>Predictions:</b></p>
+        <ul>
+            {% for prediction in result.predictions %}
+                <li>{{ prediction }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>An error occurred during processing.</p>
+    {% endif %}
+</body>
+</html>
